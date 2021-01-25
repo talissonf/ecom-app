@@ -6,9 +6,9 @@
  */
 
 const app = {
-  app_id: 111537,
-  title: 'My Awesome E-Com Plus App',
-  slug: 'my-awesome-app',
+  app_id: 111538,
+  title: 'Pagamento Próprio',
+  slug: 'app-pp',
   type: 'external',
   state: 'active',
   authentication: true,
@@ -34,13 +34,13 @@ const app = {
      * Triggered when listing payments, must return available payment methods.
      * Start editing `routes/ecom/modules/list-payments.js`
      */
-    // list_payments:        { enabled: true },
+    list_payments:        { enabled: true },
 
     /**
      * Triggered when order is being closed, must create payment transaction and return info.
      * Start editing `routes/ecom/modules/create-transaction.js`
      */
-    // create_transaction:   { enabled: true },
+    create_transaction:   { enabled: true },
   },
 
   /**
@@ -82,9 +82,9 @@ const app = {
       // 'DELETE',        // Delete customers
     ],
     orders: [
-      // 'GET',           // List/read orders with public and private fields
-      // 'POST',          // Create orders
-      // 'PATCH',         // Edit orders
+       'GET',           // List/read orders with public and private fields
+       'POST',          // Create orders
+       'PATCH',         // Edit orders
       // 'PUT',           // Overwrite orders
       // 'DELETE',        // Delete orders
     ],
@@ -105,8 +105,9 @@ const app = {
       // 'DELETE',        // Delete fulfillment event
     ],
     'orders/payments_history': [
-      // 'GET',           // List/read order payments history events
-      // 'POST',          // Create payments history entry with new status
+       'GET',           // List/read order payments history events
+       'POST',          // Create payments history entry with new status
+       'PATCH',
       // 'DELETE',        // Delete payments history entry
     ],
 
